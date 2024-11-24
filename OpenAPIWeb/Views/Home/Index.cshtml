@@ -1,0 +1,28 @@
+﻿@using Microsoft.Extensions.AI
+@model ChatCompletion
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Query Claims Data</h1>
+
+</div>
+<form asp-action="PromptAction" method="post">
+
+    <div class="form-group">
+        <p>
+            Ask question about CMS1500 Claims data
+        </p>
+
+        <input type="text" name="prompt" class="form-control" />
+
+
+        <input type="submit" class="btn btn-primary" value="Submit" />
+    </div>
+
+</form>
+<div @(Model != null) class="row">
+    @Html.Raw(Model)
+</div>
